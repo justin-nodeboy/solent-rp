@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Before/After Slider with Video</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<h1>Entrance Totem Preview</h1>
+
+<div class="container">
+  <div class="img background-img"></div>
+  <div class="img foreground-img"></div>
+  <label for="slider"></label><input type="range" min="1" max="100" value="50" class="slider" name='slider' id="slider">
+  <div class="slider-button"></div>
+</div>
+
+<video controls width="100%" poster="img/Entrance_Totem_1.jpg">
+  <source src="img/Entrance_Totem_1_Video.mp4" type="video/mp4">
+  Your browser does not support thevideo tag.
+</video>
+<script src="js/app.js"></script>
+</body>
+</html>

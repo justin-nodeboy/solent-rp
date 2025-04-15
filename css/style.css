@@ -1,0 +1,142 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Equivalent of @include center for body */
+body {
+  display: block;
+  background: #000; /* optional */
+}
+
+/* Container Styles */
+.container {
+  position: relative;
+  width: 900px;
+  height: 600px;
+  border: 2px solid white;
+}
+
+/* Image Layer Styles */
+.container .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 900px 100%;
+}
+
+.container .background-img {
+  background-image: url('../img/Entrance_Totem_1_-_NO_SCREEN.jpg');
+}
+
+.container .foreground-img {
+  background-image: url('../img/Entrance_Totem_1.jpg');
+  width: 50%;
+}
+
+/* Slider Styles */
+.container .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  margin: 0;
+  appearance: none;
+  z-index: 10;
+  pointer-events: all;
+}
+
+.container .slider:hover {
+  background: rgba(242, 242, 242, 0.1);
+}
+
+/* Slider Thumbs */
+.container .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 6px;
+  height: 600px;
+  background: white;
+  cursor: pointer;
+}
+
+.container .slider::-moz-range-thumb {
+  width: 6px;
+  height: 600px;
+  background: white;
+  cursor: pointer;
+}
+
+/* Thin vertical slider bar (the thumb track) */
+.container .slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+}
+
+.container .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 6px;
+  height: 100%;
+  background: white;
+  cursor: pointer;
+  margin-top: 0; /* removes offset */
+}
+
+.container .slider::-moz-range-thumb {
+  width: 6px;
+  height: 100%;
+  background: white;
+  cursor: pointer;
+}
+
+/* Optional: remove default styling in Firefox */
+.container .slider::-moz-range-track {
+  background: transparent;
+  border: none;
+}
+
+/* Slider Button */
+.container .slider-button {
+  pointer-events: none;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  left: calc(50% - 18px);
+  top: calc(50% - 18px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Arrow-style Button: Before and After Arrows */
+.container .slider-button::after,
+.container .slider-button::before {
+  content: '';
+  padding: 3px;
+  display: inline-block;
+  border: solid #5D5D5D;
+  border-width: 0 2px 2px 0;
+}
+
+.container .slider-button::after {
+  transform: rotate(-45deg);
+}
+
+.container .slider-button::before {
+  transform: rotate(135deg);
+}
